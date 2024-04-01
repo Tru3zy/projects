@@ -1,0 +1,25 @@
+def area_of_rectangle():
+
+
+# Prompt the user to input the length of the rectangle and remove leading and trailing whitespace
+    base = input("Enter the base: ").strip()
+
+# Prompt the user to input the width of the rectangle and remove leading and trailing whitespace
+    height = input("Enter the height: ").strip()
+
+# Check if either length or width is not provided (empty after stripping whitespace)
+    while not (base and height):
+    # If either length or width is not provided, inform the user and prompt again
+        print("Please enter a value for base and height.")
+        base = input("Enter the base: ").strip()
+        height = input("Enter the height: ").strip()
+
+# Convert the length and width to integers
+    base = int(base)
+    height = int(height)
+
+# Calculate the area of the rectangle using length and width
+    area = base * height
+
+# Print the calculated area of the rectangle
+    print("The area of the rectangle is:", area)
