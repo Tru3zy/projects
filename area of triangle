@@ -1,0 +1,23 @@
+def area_of_triangle():
+    # Get the height and base of the triangle from the user
+    height = input("Enter the length: ").strip()
+    base = input("Enter the width: ").strip()
+
+    # Ensure that both height and base have values
+    while not (base and height):
+        print("Please enter a value for base and height")
+        height = input("Enter the height: ").strip()
+        base = input("Enter the base: ").strip()
+
+    # Convert the height and base to integers
+    height = int(height)
+    base = int(base)
+
+    # Calculate the area of the triangle
+    area = (base * height) / 2
+
+    # Print the area of the triangle
+    print("The area of the triangle is:", area)
+
+# Call the function to calculate the area of the triangle
+area_of_triangle()
