@@ -1,0 +1,59 @@
+# Welcome message
+print("Welcome to the quiz game")
+
+# Function to start the game
+def start_game():
+    # Ask the user if they want to play
+    playing = input("Do you want to play? ")
+    print(playing)
+
+    # Check the user's response
+    if playing.lower() == "yes":
+        print("Let's play!")
+    else:
+        print("Maybe another time. Goodbye!")
+        quit()
+
+# Function to conduct the quiz
+def quiz():
+    score = 0
+
+    # Question 1
+    answer = input("What is 2 + 2?: ")
+
+    # Check the user's answer
+    if answer == "4":
+        print("Correct!")
+        score += 1
+    else:
+        print("Incorrect")
+
+    # Question 2
+    answer2 = input("What is 4 + 4? ")
+
+    # Check the user's answer
+    if answer2 == "8":
+        print("Correct!")
+        score += 1
+    else:
+        print("Incorrect")
+
+    # Question 3
+    answer3 = input("What is 8 + 8? ")
+
+    # Check the user's answer
+    if answer3 == "16":
+        print("Correct!")
+        score += 1
+    else:
+        print("Incorrect")
+
+    # Display the user's score
+    print(f"You scored {score}/3")
+    print(f"That is {(score / 3) * 100:.2f}%")
+
+# Start the game
+start_game()
+
+# Begin the quiz
+quiz()
