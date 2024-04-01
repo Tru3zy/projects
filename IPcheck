@@ -1,0 +1,60 @@
+import sys
+
+# Get the IP address from the user
+address = input("Enter IP address: ")
+
+# Try-except block to check if the IP address is valid
+try:
+    # Split the IP address into its individual bytes
+    byte1, byte2, byte3, byte4 = address.split(".")
+except:
+    # If the IP address cannot be split, it is invalid
+    print("Please enter a valid IP address")
+    sys.exit()
+
+# List to store the bytes and their names
+byte = []
+array = ["byte1", "byte2", "byte3", "byte4"]
+
+# Store the bytes in a list for easy access
+byte.extend((byte1, byte2, byte3, byte4))
+
+# Variable to check if all bytes are numbers
+number_check = False
+
+# Counter to keep track of the byte being checked
+counter_3 = -1
+
+# Check if each byte is a number
+for i in byte:
+    counter_3 += 1
+    # If a byte is not a number, print an error message
+    if not i.isdigit():
+        print(array[counter_3], "is not a number")
+        number_check = True
+
+# Function to check if the IP address is valid
+def bcheck(byte1, byte2, byte3, byte4):
+    counter = -1
+    counter_2 = 0
+    # Iterate over each byte and check if it is within the valid range
+    for bytecheck in [byte1, byte2, byte3, byte4]:
+        counter += 1
+        # If a byte is invalid, print an error message
+        if 0 <= bytecheck <= 255:
+            counter_2 += 1
+        else:
+            print(array[counter], "is invalid")
+    # If all bytes are valid, print that the IP is valid
+    if counter_2 == 4:
+        print("IP is valid")
+
+# Check if all bytes are numbers before converting them to integers
+if not number_check:
+    byte1 = int(byte1)
+    byte2 = int(byte2)
+    byte3 = int(byte3)
+    byte4 = int(byte4)
+
+# Call the function to check if the IP address is valid
+bcheck(byte1, byte2, byte3, byte4)
