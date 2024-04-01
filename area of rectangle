@@ -23,3 +23,6 @@ def area_of_rectangle():
 
 # Print the calculated area of the rectangle
     print("The area of the rectangle is:", area)
+
+#call the function
+area_of_rectangle()
